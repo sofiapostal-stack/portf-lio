@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sofia | Portfólio Profissional de Administração</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            50: '#f0f4f8',
+                            100: '#d9e2ec',
+                            500: '#334e68',
+                            800: '#102a43',
+                            900: '#0b1b2b',
+                        },
+                        accent: {
+                            500: '#0284c7',
+                            600: '#0369a1',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-text {
+            background: linear-gradient(135deg, #0284c7 0%, #102a43 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .dark .gradient-text {
+            background: linear-gradient(135deg, #38bdf8 0%, #93c5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
+
+    <!-- Navegação Navbar -->
+    <nav class="fixed w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 transition-colors">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="text-xl font-bold tracking-tight text-navy-800 dark:text-slate-100 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-accent-500 text-white flex items-center justify-center font-extrabold text-sm shadow-md">S</span>
+                    <span>Sofia</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="#sobre" class="hover:text-accent-500 transition-colors">Sobre Mim</a>
+                    <a href="#habilidades" class="hover:text-accent-500 transition-colors">Habilidades</a>
+                    <a href="#cases" class="hover:text-accent-500 transition-colors">Cases de Sucesso</a>
+                    <a href="#formacao" class="hover:text-accent-500 transition-colors">Formação</a>
+                    <a href="#contato" class="px-4 py-2 rounded-lg bg-navy-800 hover:bg-navy-900 text-white dark:bg-accent-500 dark:hover:bg-accent-600 transition-all shadow-sm">Contato</a>
+                    
+                    <!-- Dark Mode Toggle Button -->
+                    <button id="theme-toggle" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none">
+                        <i id="theme-toggle-dark-icon" class="fa-solid fa-moon hidden text-lg"></i>
+                        <i id="theme-toggle-light-icon" class="fa-solid fa-sun hidden text-lg"></i>
+                    </button>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="flex md:hidden items-center gap-2">
+                    <button id="theme-toggle-mobile" class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <i id="theme-toggle-dark-icon-mobile" class="fa-solid fa-moon hidden text-lg"></i>
+                        <i id="theme-toggle-light-icon-mobile" class="fa-solid fa-sun hidden text-lg"></i>
+                    </button>
+                    <button id="mobile-menu-btn" class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-4 pt-2 pb-4 space-y-3">
+            <a href="#sobre" class="block py-2 text-slate-600 dark:text-slate-300 hover:text-accent-500">Sobre Mim</a>
+            <a href="#habilidades" class="block py-2 text-slate-600 dark:text-slate-300 hover:text-accent-500">Habilidades</a>
+            <a href="#cases" class="block py-2 text-slate-600 dark:text-slate-300 hover:text-accent-500">Cases de Sucesso</a>
+            <a href="#formacao" class="block py-2 text-slate-600 dark:text-slate-300 hover:text-accent-500">Formação</a>
+            <a href="#contato" class="block w-full text-center py-2 rounded-lg bg-navy-800 dark:bg-accent-500 text-white font-medium">Contato</a>
+        </div>
+    </nav>
+
+    <!-- Hero / Banner Principal -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-500/10 text-accent-600 dark:text-sky-400 text-sm font-semibold tracking-wide">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Disponível para Oportunidades
+                </span>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+                    Olá, eu sou a <br><span class="gradient-text">Sofia</span>
+                </h1>
+                <p class="text-xl font-semibold text-slate-600 dark:text-slate-300">
+                    Profissional de Administração
+                </p>
+                <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                    Especialista na organização de rotinas administrativas, análise estratégica de dados e otimização de fluxo de trabalho para gerar eficiência e crescimento operacional sustentável.
+                </p>
+                <div class="pt-4 flex flex-wrap gap-4 justify-center lg:justify-start">
+                    <a href="#contato" class="px-6 py-3 rounded-xl bg-navy-800 hover:bg-navy-900 dark:bg-accent-500 dark:hover:bg-accent-600 text-white font-medium transition-all shadow-lg shadow-navy-800/10 flex items-center gap-2">
+                        <i class="fa-solid fa-envelope"></i> Entrar em Contato
+                    </a>
+                    <a href="#cases" class="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium transition-all flex items-center gap-2">
+                        <i class="fa-solid fa-briefcase"></i> Ver Cases
+                    </a>
+                </div>
+            </div>
+
+            <!-- Profile Card Visual Element -->
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-md bg-white dark:bg-slate-800/80 rounded-2xl p-6 shadow-xl border border-slate-200/80 dark:border-slate-700/60 backdrop-blur-lg">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <div class="w-16 h-16 rounded-full bg-gradient-to-tr from-accent-500 to-navy-800 flex items-center justify-center text-white font-bold text-2xl shadow-inner">
+                            S
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">Sofia</h3>
+                            <p class="text-sm text-slate-500 dark:text-slate-400">Administração & Processos</p>
+                            <p class="text-xs text-accent-500 font-medium mt-0.5"><i class="fa-solid fa-location-dot"></i> Brasil</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3 pt-2 border-t border-slate-100 dark:border-slate-700 text-sm">
+                        <div class="flex items-center justify-between py-2 border-b border-slate-100 dark:border-slate-700/50">
+                            <span class="text-slate-500 dark:text-slate-400"><i class="fa-solid fa-chart-line text-accent-500 w-5"></i> Foco</span>
+                            <span class="font-medium text-slate-700 dark:text-slate-200">Eficiência Operacional</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2 border-b border-slate-100 dark:border-slate-700/50">
+                            <span class="text-slate-500 dark:text-slate-400"><i class="fa-solid fa-database text-accent-500 w-5"></i> Análise</span>
+                            <span class="font-medium text-slate-700 dark:text-slate-200">Tomada de Decisão</span>
+                        </div>
+                        <div class="flex items-center justify-between py-2">
+                            <span class="text-slate-500 dark:text-slate-400"><i class="fa-solid fa-gears text-accent-500 w-5"></i> Gestão</span>
+                            <span class="font-medium text-slate-700 dark:text-slate-200">Processos & Finanças</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Mim -->
+    <section id="sobre" class="py-16 bg-white dark:bg-slate-800/40 border-y border-slate-200/60 dark:border-slate-800">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Sobre Mim</h2>
+            <div class="w-12 h-1 bg-accent-500 mx-auto rounded-full mb-8"></div>
+            <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                Profissional de Administração com sólida capacidade na organização de rotinas administrativas, análise estratégica de dados e otimização contínua do fluxo de trabalho. Busco constantemente gerar valor real para as organizações por meio do aumento da eficiência operacional, redução de desperdícios e alinhamento com a visão estratégica do negócio.
+            </p>
+        </div>
+    </section>
+
+    <!-- Habilidades e Competências -->
+    <section id="habilidades" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Habilidades & Competências</h2>
+            <div class="w-12 h-1 bg-accent-500 mx-auto rounded-full mb-4"></div>
+            <p class="text-slate-600 dark:text-slate-400">Principais pilares de atuação e ferramentas dominadas</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Card 1: Gestão & Processos -->
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-md border border-slate-200/80 dark:border-slate-700 transition-all">
+                <div class="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 text-accent-500 rounded-xl flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-sitemap"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Gestão & Processos</h3>
+                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Mapeamento de Processos</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Controle de Indicadores (KPIs)</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Organização Documental</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Gestão de Tempo</li>
+                </ul>
+            </div>
+
+            <!-- Card 2: Finanças -->
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-md border border-slate-200/80 dark:border-slate-700 transition-all">
+                <div class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-coins"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Finanças</h3>
+                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Fluxo de Caixa</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Conciliação Bancária</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Orçamentos</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Relatórios Financeiros</li>
+                </ul>
+            </div>
+
+            <!-- Card 3: Ferramentas -->
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-md border border-slate-200/80 dark:border-slate-700 transition-all">
+                <div class="w-12 h-12 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-600 dark:text-indigo-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Ferramentas</h3>
+                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Excel / Google Sheets (Avançado)</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> ERPs (SAP, TOTVS)</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Power BI</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Trello / Asana</li>
+                </ul>
+            </div>
+
+            <!-- Card 4: Idiomas -->
+            <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm hover:shadow-md border border-slate-200/80 dark:border-slate-700 transition-all">
+                <div class="w-12 h-12 bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 rounded-xl flex items-center justify-center text-xl mb-4">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-3">Idiomas</h3>
+                <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-300">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-emerald-500 text-xs"></i> Português (Nativo)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cases de Sucesso / Experiência -->
+    <section id="cases" class="py-20 bg-white dark:bg-slate-800/40 border-y border-slate-200/60 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Cases de Sucesso & Experiência</h2>
+                <div class="w-12 h-1 bg-accent-500 mx-auto rounded-full mb-4"></div>
+                <p class="text-slate-600 dark:text-slate-400">Resultados práticos alcançados por meio de soluções estratégicas</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Case 1 -->
+                <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-700/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-400 rounded-full text-xs font-bold">
+                                -15% CUSTOS OPERACIONAIS
+                            </span>
+                            <i class="fa-solid fa-boxes-stacked text-slate-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Reorganização de Estoque e Fornecedores</h3>
+                        
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-exclamation text-amber-500"></i> O Desafio:
+                                </h4>
+                                <p class="text-slate-600 dark:text-slate-400 mt-1">
+                                    Reorganizar a rotina de controle de estoque e fornecedores que apresentava divergências frequentes de inventário e prazos.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                                    <i class="fa-solid fa-user-gear text-accent-500"></i> Minha Atuação:
+                                </h4>
+                                <p class="text-slate-600 dark:text-slate-400 mt-1">
+                                    Implementação de nova planilha de controle automatizada e renegociação estratégica de prazos com os principais fornecedores.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
+                        <h4 class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2 text-sm mb-1">
+                            <i class="fa-solid fa-chart-pie text-emerald-500"></i> Resultado Alcançado:
+                        </h4>
+                        <p class="text-slate-800 dark:text-slate-200 font-medium text-sm">
+                            Redução de 15% nos custos operacionais e eliminação de falhas de inventário.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="bg-slate-50 dark:bg-slate-800 rounded-2xl p-6 sm:p-8 border border-slate-200/80 dark:border-slate-700/80 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="px-3 py-1 bg-sky-100 dark:bg-sky-900/40 text-accent-600 dark:text-sky-400 rounded-full text-xs font-bold">
+                                +30% AGILIDADE
+                            </span>
+                            <i class="fa-solid fa-headset text-slate-400 text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">Otimização do Atendimento ao Cliente</h3>
+                        
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <h4 class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                                    <i class="fa-solid fa-circle-exclamation text-amber-500"></i> O Desafio:
+                                </h4>
+                                <p class="text-slate-600 dark:text-slate-400 mt-1">
+                                    Mapear gargalos no fluxo de atendimento ao cliente da organização que geravam morosidade nas respostas.
+                                </p>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2">
+                                    <i class="fa-solid fa-user-gear text-accent-500"></i> Minha Atuação:
+                                </h4>
+                                <p class="text-slate-600 dark:text-slate-400 mt-1">
+                                    Elaboração de novos fluxogramas de atendimento e treinamento da equipe para utilização de modelos de resposta padronizados.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
+                        <h4 class="font-semibold text-slate-700 dark:text-slate-300 flex items-center gap-2 text-sm mb-1">
+                            <i class="fa-solid fa-chart-line text-accent-500"></i> Resultado Alcançado:
+                        </h4>
+                        <p class="text-slate-800 dark:text-slate-200 font-medium text-sm">
+                            Aumento de 30% na agilidade de resolução de chamados internos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formação e Cursos -->
+    <section id="formacao" class="py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <!-- Formação Acadêmica -->
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-lg bg-accent-500/10 text-accent-500 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Formação Acadêmica</h2>
+                </div>
+
+                <div class="bg-white dark:bg-slate-800 p-6 rounded-2xl border border-slate-200/80 dark:border-slate-700 shadow-sm">
+                    <h3 class="text-lg font-bold text-slate-900 dark:text-white">Bacharelado / Tecnólogo em Administração</h3>
+                    <p class="text-slate-500 dark:text-slate-400 text-sm mt-1">Ensino Superior em Administração de Empresas</p>
+                </div>
+            </div>
+
+            <!-- Cursos e Certificações -->
+            <div>
+                <div class="flex items-center gap-3 mb-6">
+                    <div class="w-10 h-10 rounded-lg bg-accent-500/10 text-accent-500 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <h2 class="text-2xl font-bold text-slate-900 dark:text-white">Cursos & Certificações</h2>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700 flex items-center gap-4">
+                        <i class="fa-solid fa-award text-amber-500 text-xl"></i>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 dark:text-white text-sm">Gestão de Projetos e Metodologias Ágeis</h4>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700 flex items-center gap-4">
+                        <i class="fa-solid fa-award text-amber-500 text-xl"></i>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 dark:text-white text-sm">Excel Avançado e Análise de Dados</h4>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-slate-800 p-4 rounded-xl border border-slate-200/80 dark:border-slate-700 flex items-center gap-4">
+                        <i class="fa-solid fa-award text-amber-500 text-xl"></i>
+                        <div>
+                            <h4 class="font-semibold text-slate-900 dark:text-white text-sm">Finanças Corporativas</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">Vamos Conversar?</h2>
+            <p class="text-slate-400 mb-12 max-w-xl mx-auto">
+                Estou à disposição para colaborar com a otimização de processos e gestão administrativa da sua organização.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <!-- Email -->
+                <a href="mailto:sofia@email.com" class="p-6 bg-slate-800/80 hover:bg-slate-800 rounded-2xl border border-slate-700 transition-all flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-accent-500/20 text-accent-400 flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 uppercase tracking-wider mb-1">E-mail</span>
+                    <span class="font-medium text-sm text-slate-200">sofia@email.com</span>
+                </a>
+
+                <!-- LinkedIn -->
+                <a href="https://linkedin.com/in/sofia" target="_blank" rel="noopener noreferrer" class="p-6 bg-slate-800/80 hover:bg-slate-800 rounded-2xl border border-slate-700 transition-all flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-accent-500/20 text-accent-400 flex items-center justify-center text-xl mb-3">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 uppercase tracking-wider mb-1">LinkedIn</span>
+                    <span class="font-medium text-sm text-slate-200">linkedin.com/in/sofia</span>
+                </a>
+
+                <!-- Telefone -->
+                <a href="tel:00999999999" class="p-6 bg-slate-800/80 hover:bg-slate-800 rounded-2xl border border-slate-700 transition-all flex flex-col items-center">
+                    <div class="w-12 h-12 rounded-full bg-accent-500/20 text-accent-400 flex items-center justify-center text-xl mb-3">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span class="text-xs text-slate-400 uppercase tracking-wider mb-1">Telefone</span>
+                    <span class="font-medium text-sm text-slate-200">(00) 99999-9999</span>
+                </a>
+            </div>
+
+            <!-- Botão Copiar Email -->
+            <button onclick="copyToClipboard('sofia@email.com')" class="px-5 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-sm font-medium transition-all inline-flex items-center gap-2 border border-slate-700">
+                <i class="fa-regular fa-copy"></i> Copiar E-mail
+            </button>
+            <div id="toast" class="mt-3 text-xs text-emerald-400 hidden">E-mail copiado para a área de transferência!</div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="py-6 bg-slate-950 text-slate-500 text-xs text-center border-t border-slate-800">
+        <p>&copy; <span id="year"></span> Sofia - Portfólio Profissional de Administração. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Set dynamic current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Dark mode setup
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const themeToggleDarkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
+        const themeToggleLightIconMobile = document.getElementById('theme-toggle-light-icon-mobile');
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+            themeToggleLightIcon.classList.remove('hidden');
+            themeToggleLightIconMobile.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeToggleDarkIcon.classList.remove('hidden');
+            themeToggleDarkIconMobile.classList.remove('hidden');
+        }
+
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+                themeToggleLightIcon.classList.add('hidden');
+                themeToggleDarkIcon.classList.remove('hidden');
+                themeToggleLightIconMobile.classList.add('hidden');
+                themeToggleDarkIconMobile.classList.remove('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+                themeToggleDarkIcon.classList.add('hidden');
+                themeToggleLightIcon.classList.remove('hidden');
+                themeToggleDarkIconMobile.classList.add('hidden');
+                themeToggleLightIconMobile.classList.remove('hidden');
+            }
+        }
+
+        document.getElementById('theme-toggle').addEventListener('click', toggleTheme);
+        document.getElementById('theme-toggle-mobile').addEventListener('click', toggleTheme);
+
+        // Mobile Menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Copy Clipboard Function
+        function copyToClipboard(text) {
+            const textarea = document.createElement('textarea');
+            textarea.value = text;
+            document.body.appendChild(textarea);
+            textarea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textarea);
+
+            const toast = document.getElementById('toast');
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
